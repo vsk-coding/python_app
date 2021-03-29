@@ -14,6 +14,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
+            cd python_app
             docker build -t $IMAGE_NAME:latest .
   publish-latest:
     executor: docker-publisher
