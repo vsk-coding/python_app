@@ -5,6 +5,14 @@ executors:
       IMAGE_NAME: vishnusk/circleci-test
     docker:
       - image: circleci/buildpack-deps:stretch
+workflows:
+  my-workflow:
+    jobs:
+      - build:
+          context:
+            - test
+      - publish-latest:
+            - test
 jobs:
   build:
     executor: docker-publisher
