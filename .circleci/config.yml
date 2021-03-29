@@ -16,13 +16,13 @@ jobs:
           name: Build Docker image
           command: |
             docker build -t $IMAGE_NAME:latest .
+            docker images
   publish-latest:
     executor: docker-publisher
     steps:
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
-            docker ps -a
             docker login -u "$DOCKER_UNAME" -p "$DOCKER_PWD"
             sudo docker push $IMAGE_NAME:latest
 workflows:
