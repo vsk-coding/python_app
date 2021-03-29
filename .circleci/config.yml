@@ -23,7 +23,7 @@ jobs:
           command: |
             echo "$DOCKER_PWD"
             docker login -u "$DOCKER_UNAME" -p "$DOCKER_PWD"
-            docker push $IMAGE_NAME:latest
+            sudo docker push $IMAGE_NAME:latest
 workflows:
   version: 2
   build-master:
