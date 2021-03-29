@@ -7,10 +7,12 @@ executors:
       - image: circleci/buildpack-deps:stretch
 jobs:
   build:
-    machine: true
     executor: docker-publisher
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+          docker_layer_caching: true
       - run:
           name: Build Docker image
           command: |
