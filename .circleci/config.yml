@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
+            docker status
             echo "$DOCKER_PWD"
             docker login -u "$DOCKER_UNAME" -p "$DOCKER_PWD"
             sudo docker push $IMAGE_NAME:latest
