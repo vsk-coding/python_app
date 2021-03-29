@@ -7,7 +7,6 @@ executors:
       - image: circleci/buildpack-deps:stretch
 jobs:
   build:
-    context: test
     executor: docker-publisher
     steps:
       - checkout
