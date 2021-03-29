@@ -4,7 +4,7 @@ executors:
     environment:
       IMAGE_NAME: vishnusk/circleci-test
     docker:
-      - image: circleci/buildpack-deps:stretch
+      - image: circleci/buildpack-deps:trusty
 jobs:
   build:
     executor: docker-publisher
