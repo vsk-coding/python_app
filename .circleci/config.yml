@@ -20,6 +20,8 @@ jobs:
   publish-latest:
     executor: docker-publisher
     steps:
+      - setup_remote_docker:
+          version: 19.03.13
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
